@@ -4,7 +4,7 @@
 // ============================================================
 
 // API Base URL - change this when deploying backend
-const API_BASE = window.location.origin;
+const API_BASE = 'https://sql-optimizer-dashboard.onrender.com';
 
 // Sample queries for demo
 const sampleQueries = [
