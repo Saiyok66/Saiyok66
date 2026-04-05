@@ -1,0 +1,120 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SQL Optimizer Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'></text></svg>">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <h1> AI-Powered <span>SQL Query Optimizer</span></h1>
+    <p>Analyze, optimize, and understand your SQL queries instantly</p>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container">
+
+    <!-- Input Section -->
+    <section class="input-section">
+      <label for="sqlInput"> Enter your SQL Query:</label>
+      <textarea
+        id="sqlInput"
+        class="sql-textarea"
+        placeholder="Type or paste your SQL query here...&#10;&#10;Example: SELECT * FROM users WHERE age > 25 ORDER BY name;"
+        spellcheck="false"
+      ></textarea>
+
+      <div class="btn-group">
+        <button class="btn btn-analyze" id="btnAnalyze" onclick="analyzeQuery()">
+           Analyze Query
+        </button>
+        <button class="btn btn-optimize" id="btnOptimize" onclick="optimizeQuery()">
+           Optimize Query
+        </button>
+        <button class="btn btn-sample" onclick="loadSample()">
+           Load Sample
+        </button>
+        <button class="btn btn-clear" onclick="clearAll()">
+           Clear
+        </button>
+      </div>
+    </section>
+
+    <!-- Loading Spinner -->
+    <div class="loading" id="loading">
+      <div class="spinner"></div>
+      <p>Processing your query...</p>
+    </div>
+
+    <!-- Score Section -->
+    <section class="score-section" id="scoreSection">
+      <div class="score-circle" id="scoreCircle">
+        <span id="scoreValue">0</span>
+        <small>/100</small>
+      </div>
+      <p class="score-label">Query Quality Score</p>
+    </section>
+
+    <!-- Results -->
+    <div class="results">
+
+      <!-- Errors Panel -->
+      <div class="panel" id="errorsPanel">
+        <div class="panel-header errors"> Errors</div>
+        <div class="panel-body" id="errorsBody"></div>
+      </div>
+
+      <!-- Suggestions Panel -->
+      <div class="panel" id="suggestionsPanel">
+        <div class="panel-header suggestions"> Suggestions</div>
+        <div class="panel-body" id="suggestionsBody"></div>
+      </div>
+
+      <!-- Explanation Panel -->
+      <div class="panel" id="explanationPanel">
+        <div class="panel-header explanation"> Query Explanation</div>
+        <div class="panel-body" id="explanationBody"></div>
+      </div>
+
+      <!-- Optimized Query Panel -->
+      <div class="panel" id="optimizedPanel">
+        <div class="panel-header optimized"> Optimized Query</div>
+        <div class="panel-body" id="optimizedBody"></div>
+      </div>
+
+      <!-- Changes Panel -->
+      <div class="panel" id="changesPanel">
+        <div class="panel-header changes"> Changes Made</div>
+        <div class="panel-body" id="changesBody"></div>
+      </div>
+
+      <!-- Tips Panel -->
+      <div class="panel" id="tipsPanel">
+        <div class="panel-header tips"> Improvement Tips</div>
+        <div class="panel-body" id="tipsBody"></div>
+      </div>
+
+    </div>
+
+    <!-- Empty State -->
+    <div class="empty-state" id="emptyState">
+      <div class="icon"></div>
+      <p>Enter a SQL query above and click <strong>Analyze</strong> or <strong>Optimize</strong> to get started.</p>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>SQL Optimizer Dashboard &copy; 2026 | Built by
+      <a href="https://github.com/Saiyok66" target="_blank">Saiyok66</a>
+    </p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
